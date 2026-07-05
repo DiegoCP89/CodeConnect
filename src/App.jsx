@@ -5,7 +5,7 @@ import Sidebar from "./componentes/Sidebar";
 
 function App() {
   return (
-    <div>
+    <div className="container">
       <Sidebar />
       <BarraDePesquisa />
     </div>
