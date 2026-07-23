@@ -1,9 +1,8 @@
-//import { useState } from "react";
 import "./App.css";
 import BarraDePesquisa from "./componentes/BarraDePesquisa";
 import Filtro from "./componentes/Filtro";
 import Sidebar from "./componentes/Sidebar";
-/* import Ordenacao from "./componentes/Ordenacao"; */
+import Ordenacao from "./componentes/Ordenacao";
 import Card from "./componentes/Cards";
 import { useEffect, useState } from "react";
 
@@ -16,15 +15,32 @@ function App() {
       .then((resposta) => resposta.json())
       .then((dados) => setDados(dados));
   }, []);
-  console.log(dados);
-  
+
   return (
     <div className="container">
       <Sidebar />
       <div>
         <BarraDePesquisa />
         <Filtro />
-        <Card />
+        <Ordenacao />
+        <ul className="lista-cards">
+          {dados
+            ? dados.map((item, index) => (
+                <li key={index}>
+                  <Card
+                    id={item.id}
+                    imagemUrl={item.imagem_capa}
+                    titulo={item.titulo}
+                    resumo={item.resumo}
+                    linhasDeCodigo={item.linhas_de_codigo}
+                    compartilhamentos={item.compartilhamentos}
+                    comentarios={item.comentarios}
+                    usuario={item.usuario}
+                  />
+                </li>
+              ))
+            : null}
+        </ul>
       </div>
     </div>
   );

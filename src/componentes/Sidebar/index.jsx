@@ -13,26 +13,31 @@ export default function Sidebar() {
         <ul className="lista-sidebar">
           <li>
             <a href="#" className="item__link-publicacao">
-              {" "}
-              Publicar{" "}
+              Publicar
             </a>
           </li>
           <li>
             <a href="#" className="item__link item__link--ativo">
               <img src={Feed} alt="" />
-              <span> Feed </span>
+              <span>Feed</span>
             </a>
+          </li>
+          <li>
             <a href="#" className="item__link">
               <img src={Account} alt="" />
-              <span> Perfil </span>
+              <span>Perfil</span>
             </a>
+          </li>
+          <li>
             <a href="#" className="item__link">
               <img src={Info} alt="" />
-              <span> Sobre nós </span>
+              <span>Sobre nós</span>
             </a>
+          </li>
+          <li>
             <a href="#" className="item__link">
               <img src={Logout} alt="" />
-              <span> Sair </span>
+              <span>Sair</span>
             </a>
           </li>
         </ul>
